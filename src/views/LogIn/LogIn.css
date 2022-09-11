@@ -1,0 +1,8 @@
+.LogIn {
+    display: grid;
+    place-items: center;
+}
+
+.LogIn > img {
+    width: 100%;
+}
