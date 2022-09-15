@@ -2,9 +2,14 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import LogIn from './views/LogIn/LogIn';
 import { getTokenFromURL } from './views/LogIn/spotify';
+import SpotifyWebApi from 'spotify-web-api-js';
+import Player from './components/Player';
+import { useDataLayerValue } from './context/DataLayer';
 
 function App() {
-  const [token, setToken] = useState(null);
+  const [{ user, token }, dispatch] = useDataLayerValue();
+
+  const spotify = new SpotifyWebApi();
 
   useEffect(() => {
     const hash = getTokenFromURL();
@@ -13,8 +18,22 @@ function App() {
     const _token = hash.access_token;
 
     if (_token) {
-      setToken(_token);
+      dispatch({
+        type: 'SET_TOKEN',
+        token: _token
+      });
+      
+      spotify.setAccessToken(_token);
+
+      spotify.getMe().then(user => {
+        dispatch({
+          type: 'SET_USER',
+          user
+        })
+      });
     }
+
+    console.log(`me:`, user);
   }, []);
   
   return (
@@ -23,11 +42,9 @@ function App() {
 
       {
         // If not logged in, show the log in page
-        token ? (
-          <h1>Logged in to Spotify</h1>
-        ) : (
+        token ?
+          <Player /> :
           <LogIn />
-        )
       }
     </div>
   );
