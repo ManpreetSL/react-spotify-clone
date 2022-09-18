@@ -3,7 +3,7 @@ import './App.css';
 import LogIn from './views/LogIn/LogIn';
 import { getTokenFromURL } from './views/LogIn/spotify';
 import SpotifyWebApi from 'spotify-web-api-js';
-import Player from './components/Player';
+import Player from './views/Home/Player';
 import { useDataLayerValue } from './context/DataLayer';
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
         type: 'SET_TOKEN',
         token: _token
       });
-      
+
       spotify.setAccessToken(_token);
 
       spotify.getMe().then(user => {
@@ -32,8 +32,6 @@ function App() {
         })
       });
     }
-
-    console.log(`me:`, user);
   }, []);
   
   return (
