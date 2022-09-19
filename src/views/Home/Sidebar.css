@@ -7,3 +7,11 @@
     height: calc(100vh - 65px);
     padding: 0.4em 1em;
 }
+
+.sidebar__logo {
+    filter: invert(100);
+    object-fit: contain;
+    width: 100px;
+    margin-right: auto;
+    padding: 1em;
+}
