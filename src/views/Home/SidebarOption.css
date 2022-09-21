@@ -1,4 +1,6 @@
 .sidebarOption {
+    display: flex;
+    align-items: center;
     cursor: pointer;
     height: 3em;
     color: #777;
@@ -7,4 +9,17 @@
 
 .sidebarOption:hover {
     color: #fff;
+}
+
+.sidebarOption__icon {
+    padding: 0px 10px;
+}
+
+.sidebar__title {
+    text-transform: uppercase;
+}
+
+.sidebarOption > p {
+    margin: 10px 0px 0px 20px;
+    font-size: 0.9em;
 }
