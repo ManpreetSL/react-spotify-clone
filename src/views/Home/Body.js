@@ -4,7 +4,7 @@ import './Body.css';
 function Body() {
   return (
     <div className='body'>
-      <h1>Logged  in to Spotify. Playing now.</h1>
+      <h1>Logged in to Spotify. Playing now.</h1>
     </div>
   );
 }
