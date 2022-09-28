@@ -23,3 +23,39 @@
     justify-content: space-between;
     max-width: 200px;
 }
+
+.footer__green {
+    color: #1ed15e;
+}
+
+.footer__icon:hover,
+.footer__green:hover {
+    transition: transform 0.2s ease-in-out;
+    transform: scale(1.3) !important;
+}
+
+.footer__right .MuiSlider-root {
+    color: #1ed15e;
+}
+
+.footer__left {
+    display: flex;
+}
+
+.footer__albumCover {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.footer__songInfo {
+    text-align: center;
+}
+
+.footer__songInfo > h4 {
+    margin-bottom: 7px;
+}
+
+.footer__songInfo > h5 {
+    font-size: 5px;
+}
