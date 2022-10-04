@@ -25,6 +25,11 @@ const reducer = (state, action) => {
                 ...state,
                 playlists: action.playlists
             };
+        case 'SET_SPOTIFY':
+            return {
+                ...state,
+                spotify: action.spotify
+            };
         default:
             return state;
     };
